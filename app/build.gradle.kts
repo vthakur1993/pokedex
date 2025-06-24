@@ -17,9 +17,8 @@ android {
         minSdk = 24
         targetSdk = 35
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.1"
         testInstrumentationRunner = "com.example.pokedex.CustomTestRunner"
-        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments.putAll( mutableMapOf(
             "clearPackageData" to "true",
             "dagger.hilt.android.internal.testing.TestApplicationComponentManager.HiltTestApplication" to "dagger.hilt.android.testing.HiltTestApplication"
@@ -28,7 +27,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
